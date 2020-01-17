@@ -1,6 +1,5 @@
 const button = document.getElementById("generate");
 const display = document.getElementById("results");
-const valueDisplay = document.getElementById("range-value");
 
 // Criteria Elements
 const lowercase = document.getElementById("lowercase");
@@ -49,6 +48,12 @@ button.onclick = () => {
     display.innerHTML = generatedArray.join('').toString();
 };
 
+display.onclick = () => {
+    let value = document.getElementById("results").innerHTML;
+    console.log(value);
+    copyToClipboard(value);
+}
+
 const addToArray = (str, arr) => {
     for (var i = 0; i < str.length; i++) {
         arr.push(str.charAt(i));
@@ -61,3 +66,15 @@ const randomizer = (arr, arr2, num) => {
         arr2.push(arr[val])
     };
 };
+
+const copyToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  };
