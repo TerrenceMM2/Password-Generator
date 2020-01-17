@@ -1,7 +1,13 @@
-html, body {
+html,
+body {
     height: 100%;
     text-align: center;
     font-family: 'Chakra Petch', sans-serif;
+    background: #333333;
+    background: -webkit-linear-gradient(top left, #333333, #000000);
+    background: -moz-linear-gradient(top left, #333333, #000000);
+    background: linear-gradient(to bottom right, #333333, #000000);
+    color: white;
 }
 
 body {
@@ -11,6 +17,7 @@ body {
 
 header {
     font-weight: bold;
+    font-size: 1.5rem;
 }
 
 main {
@@ -22,11 +29,15 @@ main {
 
 .container {
     width: 75%;
-    padding: 2rem;
+    padding: 2em;
+    margin-top: -5rem;
 }
 
-.results {
-    height: 7em;
+#results {
+    height: 2em;
+    line-height: 2em;
+    padding: 4em 2em;
+    max-width: 32em;
     margin: 0 auto 1.25em auto;
     border: 1px dashed lightgray;
     border-radius: 10px;
@@ -35,6 +46,11 @@ main {
 button {
     display: block;
     margin: 0 auto;
+    border-radius: 5px;
+    width: 20rem;
+    padding: .5rem;
+    border: 0;
+    background-color: #1de9b6;
 }
 
 footer {
