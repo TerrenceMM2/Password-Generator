@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Password Generator</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:300,400,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque:300,400,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
@@ -17,8 +18,10 @@
     <main>
         <div class="container">
             <h2>Generate a Password</h2>
-            <div id="results"></div>
-            <span id="copy">Copy</span>
+            <div id="results-container">
+                <div id="results"></div>
+                <div id="copy">Copy</div>
+            </div>
             <div id="criteria">
                 <button id="generate" type="button">Generate</button>
                 <input type="checkbox" id="lowercase" value="lowercase">lowercase<br>

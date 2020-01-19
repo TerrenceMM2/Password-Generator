@@ -2,12 +2,13 @@ html,
 body {
     height: 100%;
     text-align: center;
-    font-family: 'Chakra Petch', sans-serif;
+    font-family: 'Darker Grotesque', sans-serif;
     background: #333333;
     background: -webkit-linear-gradient(top left, #333333, #000000);
     background: -moz-linear-gradient(top left, #333333, #000000);
     background: linear-gradient(to bottom right, #333333, #000000);
     color: white;
+    font-size: 20px;
 }
 
 body {
@@ -33,14 +34,25 @@ main {
     margin-top: -5rem;
 }
 
-#results {
-    height: 2em;
-    padding: 4em 2em;
+#results-container {
     max-width: 32em;
     margin: 0 auto 1.25em auto;
     border: 1px dashed lightgray;
     border-radius: 10px;
+}
+
+#results {
+    height: 2em;
+    padding: 4em 2em;
+    max-width: 32em;
     overflow-wrap: break-word;
+}
+
+#copy {
+    float: right;
+    position: relative;
+    bottom: 1.5em;
+    right: .5em;
 }
 
 button {
@@ -51,6 +63,8 @@ button {
     padding: .5rem;
     border: 0;
     background-color: #1de9b6;
+    font-weight: bold;
+    font-size: 1.25em;
 }
 
 footer {

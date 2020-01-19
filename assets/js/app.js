@@ -1,5 +1,6 @@
 const button = document.getElementById("generate");
 const display = document.getElementById("results");
+const copy = document.getElementById("copy");
 
 // Criteria Elements
 const lowercase = document.getElementById("lowercase");
@@ -48,7 +49,7 @@ button.onclick = () => {
     display.innerHTML = generatedArray.join('').toString();
 };
 
-display.onclick = () => {
+copy.onclick = () => {
     let value = document.getElementById("results").innerHTML;
     console.log(value);
     copyToClipboard(value);
