@@ -47,11 +47,15 @@ button.onclick = () => {
 
     randomizer(criteria, generatedArray, slider.value);
 
-    display.innerHTML = generatedArray.join('').toString();
+    display.innerHTML = generatedArray
+        .join('')
+        .toString();
 };
 
 copy.onclick = () => {
-    let value = document.getElementById("results").innerHTML;
+    let value = document
+        .getElementById("results")
+        .innerHTML;
     copyToClipboard(value);
     animateCSS("#copy", "heartBeat")
 }
@@ -75,21 +79,30 @@ const copyToClipboard = str => {
     el.setAttribute('readonly', '');
     el.style.position = 'absolute';
     el.style.left = '-9999px';
-    document.body.appendChild(el);
+    document
+        .body
+        .appendChild(el);
     el.select();
     document.execCommand('copy');
-    document.body.removeChild(el);
+    document
+        .body
+        .removeChild(el);
 };
 
 const animateCSS = (element, animationName, callback) => {
     const node = document.querySelector(element)
-    node.classList.add('animated', animationName)
+    node
+        .classList
+        .add('animated', animationName)
 
     function handleAnimationEnd() {
-        node.classList.remove('animated', animationName)
+        node
+            .classList
+            .remove('animated', animationName)
         node.removeEventListener('animationend', handleAnimationEnd)
 
-        if (typeof callback === 'function') callback()
+        if (typeof callback === 'function') 
+            callback()
     }
 
     node.addEventListener('animationend', handleAnimationEnd)
