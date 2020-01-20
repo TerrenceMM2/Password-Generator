@@ -101,7 +101,7 @@ const animateCSS = (element, animationName, callback) => {
             .remove('animated', animationName)
         node.removeEventListener('animationend', handleAnimationEnd)
 
-        if (typeof callback === 'function') 
+        if (typeof callback === 'function')
             callback()
     }
 
