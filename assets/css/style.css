@@ -57,9 +57,10 @@ main {
 
 button {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 1rem auto;
     border-radius: 5px;
-    width: 20rem;
+    width: 100%;
+    max-width: 20rem;
     padding: .5rem;
     border: 0;
     background-color: #1de9b6;
@@ -70,4 +71,139 @@ button {
 footer {
     height: 50px;
     flex-shrink: 0;
+    padding-bottom: 1rem;
+}
+
+/* Styling Checkbox Starts */
+.input-title {
+    display: inline-block;
+}
+
+.checkbox-container {
+    margin-bottom: .25rem;
+}
+
+.checkbox-label {
+    display: inline-block;
+    position: relative;
+    margin: auto;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 15px;
+    height: 15px;
+    width: 15px;
+    clear: both;
+}
+
+.checkbox-label input {
+    display: none;
+}
+
+.checkbox-label .checkbox-custom {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border: 2px solid #1de9b6;
+}
+
+.checkbox-label input:checked~.checkbox-custom {
+    background-color: #1de9b6;
+    border-radius: 5px;
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+    border: 2px solid #1de9b6;
+}
+
+.checkbox-label .checkbox-custom::after {
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 12px;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity: 1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+.checkbox-label input:checked~.checkbox-custom::after {
+    -webkit-transform: rotate(45deg) scale(1);
+    -ms-transform: rotate(45deg) scale(1);
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+    left: 4px;
+    top: 0px;
+    width: 5px;
+    height: 12px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+/* W3Schools Custom Range Slider Styling */
+#slider-container {
+    margin-top: 1rem;
+}
+
+#slider-container p {
+    margin: 0;
+}
+
+#range-value {
+    width: 30px;
+    display: inline-block;
+}
+
+
+#slider {
+    -webkit-appearance: none;
+    width: 100%;
+    max-width: 20rem;
+    height: 5px;
+    border-radius: 5px;
+    background: #FFF;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #1de9b6;
+    cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #1de9b6;
+    cursor: pointer;
 }

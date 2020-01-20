@@ -1,6 +1,7 @@
 const button = document.getElementById("generate");
 const display = document.getElementById("results");
 const copy = document.getElementById("copy");
+const copies = document.getElementById("copied");
 
 // Criteria Elements
 const lowercase = document.getElementById("lowercase");
@@ -20,14 +21,14 @@ const rangeValue = () => {
     let newValue = slider.value;
     const target = document.getElementById("range-value");
     target.innerHTML = newValue;
-  }
-  
+}
+
 slider.addEventListener("input", rangeValue);
 
 button.onclick = () => {
     let criteria = [];
     let generatedArray = [];
-    
+
     if (lowercase.checked) {
         addToArray(lowerChars, criteria);
     };
@@ -51,8 +52,8 @@ button.onclick = () => {
 
 copy.onclick = () => {
     let value = document.getElementById("results").innerHTML;
-    console.log(value);
     copyToClipboard(value);
+    animateCSS("#copy", "heartBeat")
 }
 
 const addToArray = (str, arr) => {
@@ -78,4 +79,18 @@ const copyToClipboard = str => {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
-  };
+};
+
+const animateCSS = (element, animationName, callback) => {
+    const node = document.querySelector(element)
+    node.classList.add('animated', animationName)
+
+    function handleAnimationEnd() {
+        node.classList.remove('animated', animationName)
+        node.removeEventListener('animationend', handleAnimationEnd)
+
+        if (typeof callback === 'function') callback()
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd)
+}
