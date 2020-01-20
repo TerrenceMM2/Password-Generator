@@ -1,4 +1,5 @@
 # Password Generator
+Live Link: http://terrence.codes/Password-Generator/
 
 ## Purpose
 This single, JavaScript web utility allows one to generate a unique password based on a provide set of criteria and save to the user's clipboard for future use.  
